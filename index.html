@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Veículo</title>
+  <link rel="stylesheet" href="cadastrarveiculo.css">
+</head>
+<body>
+  
+  <!-- Botão menu -->
+  <div class="menu-btn" id="menu-btn">☰</div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="https://beatrizsluz.github.io/tela-inicial/">Tela Inicial</a></li>
+      <li><a href="https://beatrizsluz.github.io/cadastrar-veiculos/">Cadastrar Novo Veículo</a></li>
+      <li><a href="#">Veículos Cadastrados</a></li>
+      <li><a href="#">Meus Dados</a></li>
+      <li class="logout"><a href="https://beatrizsluz.github.io/tela-de-login-BMS/">⎋ Sair</a></li>
+    </ul>
+  </div>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Formulário -->
+  <main class="form-container">
+    <h1>VEÍCULO CADASTRADO</h1>
+
+    <form>
+      <label>Proprietário do veículo:</label>
+      <input type="text" value="Marcos" name="proprietario">
+
+      <label>Telefone do proprietário:</label>
+      <input type="tel" value="(99)999999999" id="telefone" name="telefone" placeholder="(99) 99999-9999" pattern="\(\d{2}\)\s\d{4,5}-\d{4}">
+
+      <label>Funcionário que recebeu:</label>
+      <input type="text" value="José" name="funcionario">
+
+      <label>Serviço realizado:</label>
+      <input type="text" value="Troca de filtro de ar" name="servico" placeholder="Ex.: Troca de óleo">
+
+      <label>Placa e modelo do veículo:</label>
+      <input type="text" value="OLX123 SIENA VERMELHO" name="placa_modelo" placeholder="Ex.: OTM 2X22 Fiat Uno">
+
+      <label>Data e horário em que chegou:</label>
+      <div class="inline">
+        <input type="text" value="28/10/2015" name="data_chegada">
+        <input type="text" value="11:34" name="hora_chegada">
+      </div>
+
+      <label>Data e horário em que saiu:</label>
+      <div class="inline">
+        <input type="text" value="28/10/2025" name="data_saida">
+        <input type="text" value="12:40" name="hora_saida">
+      </div>
+
+      <label>Responsável pela entrada:</label>
+      <input type="text" value="Marcos" name="responsavel_entrada">
+
+      <label>Responsável pela saída:</label>
+      <input type="text" value="Marcos" name="responsavel_saida">
+
+      <label>Estado em que chegou:</label>
+      <input type="image" name="foto_chegada">
+
+      <label>Estado em que saiu:</label>
+      <input type="image" name="foto_saida">
+
+      
+    </form>
+  </main>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    menuBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("active");
+      overlay.classList.toggle("active");
+    });
+
+    overlay.addEventListener("click", () => {
+      sidebar.classList.remove("active");
+      overlay.classList.remove("active");
+    });
+  </script>
+
+</body>
+</html>
